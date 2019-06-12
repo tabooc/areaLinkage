@@ -5,21 +5,17 @@
 
 html:
 ```
-<select name="province" class="space-mr20 select-common select-small" id="J_Province" onChange="changeComplexProvince(this.value, sub_array, 'J_City', 'J_Area');"></select>
-<select name="city" class="space-mr20 select-common select-small" id="J_City" onChange="changeCity(this.value,'J_Area','J_Area');"></select>
-<select name="area" class="select-common select-small" id="J_Area"></select>
+<select name="provinceNodeId"></select>
+<select name="cityNodeId"></select>
+<select name="areaNodeId"></select>
 
 <script src="AreaData.js"></script>
 <script src="Area.js"></script>
-
 ```
 
 调用:
 
 ```
-pid:省份id(0表示默认)
-cid:城市id(sub_array对应的后两位,0表示默认)
-aid:地区id(sub_arr对应的后两位,0表示默认)
-
-initComplexArea('J_Province', 'J_City', 'J_Area', area_array, sub_array, sub_arr, pid, cid, aid);
+省份nodeId,市级nodeId,区县nodeId,省数据,市数据,区县数据,默认选中的省份序号(0),默认选中的市序号(0),默认选择的区县序号(0)
+complexArea.initComplexArea('provinceNodeId', 'cityNodeId', 'areaNodeId', areaData.area_array, areaData.sub_array, areaData.sub_arr, pid, cid, aid);
 ```
